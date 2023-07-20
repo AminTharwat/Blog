@@ -1,0 +1,24 @@
+<div class="container">
+  <form class="form-container" [formGroup]="postForm" (ngSubmit)="onSubmit()">
+  <div style="display:flex;justify-content: space-between; align-items: center;">  <h1 class="form-title">Create a New Post</h1>
+   </div>
+
+    <div class="form-group">
+      <label for="postTitle">Post Title</label>
+      <input type="text" class="form-input"   placeholder="Enter the post title" formControlName="title" required>
+
+    </div>
+    <div class="form-group">
+      <label for="postDate">Post Date</label>
+      <input type="text" class="form-input"   placeholder="Enter the post date" formControlName="date" required>
+
+    </div>
+    <div class="form-group">
+      <label for="postDescription">Post Description</label>
+      <textarea class="form-input"   placeholder="Enter the post description" formControlName="excerpt" required></textarea>
+
+    </div>
+    <button class="form-submit" type="submit"  >Publish Post</button>
+    <a class="button button2" routerLink="/singlepostcreation">create new post</a>
+  </form>
+</div>

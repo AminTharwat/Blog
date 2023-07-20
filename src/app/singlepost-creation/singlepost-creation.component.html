@@ -1,0 +1,22 @@
+<div class="container">
+  <form class="form-container" style="    width: 60%;
+  " [formGroup]="singleForm">
+    <h1 class="form-title">Create the Post content</h1>
+    <div class="form-group">
+      <label for="postTitle">Post Title</label>
+      <input type="text" class="form-input"   placeholder="Enter the post title" formControlName="title" required>
+
+    </div>
+    <div class="form-group">
+      <label for="postDate">Post Date</label>
+      <input type="text" class="form-input"   placeholder="Enter the post date" formControlName="date" required>
+
+    </div>
+    <div class="form-group">
+      <label for="postContent">Post content</label>
+      <textarea class="form-input"   placeholder="Enter the post content " formControlName="content" required></textarea>
+
+    </div>
+    <button class="form-submit" type="submit"  >Create Post</button>
+  </form>
+</div>
