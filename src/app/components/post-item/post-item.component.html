@@ -1,0 +1,30 @@
+
+<div id="layout" class="pure-g">
+  <div class="content pure-u-1 pure-u-md-3-4">
+    <div>
+      <div class="posts">
+        <div style="display: flex; justify-content: space-between;">
+         </div>
+
+         <section class="post"   >
+          <header class="post-header" >
+            <h2 class="post-title"  >{{posts?.title}}</h2>
+            <p class="post-meta">
+              Date
+              <a routerLink="/posts">{{ posts?.date | date : "short" }}</a>
+            </p>
+          </header>
+
+          <div class="post-description">
+            <p  >{{posts?.excerpt}}</p>
+            <a class="button button1"  >
+              Read More
+            </a>
+          </div>
+        </section>
+      </div>
+
+
+    </div>
+  </div>
+</div>

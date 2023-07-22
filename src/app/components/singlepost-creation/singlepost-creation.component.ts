@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { BlogcreationService } from '../shared/service/blogcreation.service';
 
 @Component({
   selector: 'app-singlepost-creation',
@@ -10,7 +9,7 @@ import { BlogcreationService } from '../shared/service/blogcreation.service';
 export class SinglepostCreationComponent implements OnInit {
   singleForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private blogCreationService: BlogcreationService) {
+  constructor(private fb: FormBuilder,  ) {
     this.singleForm = this.fb.group({
       title: ['', Validators.required],
       date: ['', Validators.required],

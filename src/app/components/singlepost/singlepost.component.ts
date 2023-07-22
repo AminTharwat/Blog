@@ -1,7 +1,8 @@
 import { NgxSpinnerService } from 'ngx-spinner';
-import { Component, OnInit } from '@angular/core';
-import { BlogService } from '../shared/service/blog.service';
-import { ActivatedRoute } from '@angular/router';
+import { Component, Input, OnInit } from '@angular/core';
+ import { ActivatedRoute } from '@angular/router';
+import { BlogService } from 'src/app/shared/service/blogApi.service';
+import { PostCreation } from 'src/app/shared/models/posts';
 
 @Component({
   selector: 'app-singlepost',
@@ -12,7 +13,9 @@ export class SinglepostComponent implements OnInit {
   blogSinglePosts:any
   errorMessage:any
   id?:string
-    constructor(private blogservice :BlogService , private spinner:NgxSpinnerService , private route:ActivatedRoute){}
+  @Input() post?: PostCreation;
+
+    constructor(private blog :BlogService , private spinner:NgxSpinnerService , private route:ActivatedRoute){}
 
     ngOnInit() {
       this.id=this.route.snapshot.paramMap.get('id') as string
@@ -24,10 +27,9 @@ export class SinglepostComponent implements OnInit {
     this.spinner.show();
 
     setTimeout(() => {
-      /** spinner ends after 5 seconds */
-      this.spinner.hide();
+       this.spinner.hide();
     }, 1500);
-     this.blogservice.getSinglePosts(this.id).subscribe(
+     this.blog.getSinglePosts(this.id).subscribe(
       (data) =>{
         this.blogSinglePosts=data
        },

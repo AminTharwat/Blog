@@ -15,8 +15,15 @@
           <h1 class="content-subhead">Blog posts</h1>
         <a class="button button2" routerLink="/postcreation">create new post</a>
         </div>
+      </div>
 
-        <span style="color: red" *ngIf="errorMessage">{{ errorMessage }} </span>
+      <div   *ngFor="let post of blog.posts">
+        <post-item [posts]="post"></post-item>
+      </div>
+
+
+
+         <span style="color: red" *ngIf="errorMessage">{{ errorMessage }} </span>
         <section class="post" *ngFor="let post of blogPosts">
           <header class="post-header">
             <h2 class="post-title" [innerHTML]="post.title.rendered"></h2>
@@ -45,5 +52,6 @@
         </div>
       </div>
     </div>
-  </div>
+
 </div>
+

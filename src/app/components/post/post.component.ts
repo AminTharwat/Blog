@@ -1,6 +1,8 @@
-import { Component ,OnInit } from '@angular/core';
-import { BlogService } from '../shared/service/blog.service';
+import { Component ,Input,OnInit } from '@angular/core';
+import { BlogService } from '../../shared/service/blogApi.service';
 import { NgxSpinnerService } from "ngx-spinner";
+import { BlogcreationService } from 'src/app/shared/service/blogcreation.service';
+import { PostCreation } from 'src/app/shared/models/posts';
 
 @Component({
   selector: 'app-post',
@@ -10,8 +12,10 @@ import { NgxSpinnerService } from "ngx-spinner";
 export class PostComponent implements OnInit {
 blogPosts:any
 errorMessage:any
-  constructor(private blogservice :BlogService , private spinner:NgxSpinnerService){}
-  ngOnInit() {
+ @Input() posts?: PostCreation;
+
+  constructor(private blogservice :BlogService , private spinner:NgxSpinnerService , public blog:BlogcreationService){}
+ async ngOnInit() {
     this.getPosts();
 
    }
@@ -34,8 +38,4 @@ getPosts(){
 }
 
 
-
-singlePost(){
-
-}
 }
