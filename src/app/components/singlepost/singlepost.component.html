@@ -6,7 +6,7 @@
     <div>
        <div class="posts">
          <span style="color: red">{{errorMessage}}</span>
-         <section class="post" *ngIf="blogSinglePosts">
+         <section class="post p-5" *ngIf="blogSinglePosts">
           <header class="post-header">
             <h2 class="post-title" [innerHTML]="blogSinglePosts.title.rendered "></h2>
             <p class="post-meta">
@@ -16,7 +16,7 @@
           </header>
 
           <div class="post-description">
-            <p [innerHTML]="blogSinglePosts.content.rendered">
+            <p [innerHTML]="blogSinglePosts.content.rendered">{{blogSinglePosts.content.rendered}}
             </p>
           </div>
         </section>

@@ -8,9 +8,9 @@ import { PostCreation } from '../models/posts';
   providedIn: 'root'
 })
 export class BlogService {
-  private baseUrl = 'https://devteam-sandbox-1.woovl.com/wp-json/wp/v2';
-  private username = 'devtest';
-  private password = '$yWQC1HQEADm8H(Z';
+  private baseUrl = 'http://localhost/wordpress/wp-json/wp/v2';
+  private username = 'kamona';
+  private password = 'kamona';
 
   constructor(private http: HttpClient) {}
 

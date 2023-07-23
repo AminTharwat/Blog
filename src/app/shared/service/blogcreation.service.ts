@@ -26,12 +26,12 @@ export class BlogcreationService {
 
 constructor(public blog:BlogService){}
 
- async  createPost(post: PostCreation)  {
-  const request$ = this.blog.createPost(post );
-  let response = await lastValueFrom(request$);
-   console.log(response);
 
-}
+async createPost(post: PostCreation) {
+  const request$ = this.blog.createPost(post);
+  let response = await lastValueFrom(request$);
+  console.log(response);
+ }
 // async  getPosts( ) {
 //   const request$ = this.blog.getPosts( );
 //   let response = await lastValueFrom(request$);

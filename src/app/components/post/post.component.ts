@@ -12,7 +12,7 @@ import { PostCreation } from 'src/app/shared/models/posts';
 export class PostComponent implements OnInit {
 blogPosts:any
 errorMessage:any
- @Input() posts?: PostCreation;
+ @Input() posts?: any;
 
   constructor(private blogservice :BlogService , private spinner:NgxSpinnerService , public blog:BlogcreationService){}
  async ngOnInit() {
